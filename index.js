@@ -1,10 +1,13 @@
 const express = require("express");
-const { UserRoutes } = require("./routes/course");
+const { CourseRouter } = require("./routes/course");
 
-const { createdUserRoutes } = require("./routes/user");
+const { userRouter } = require("./routes/user");
 
-const app = express;
+const app = express();
 
-app.use("/user", userRouter);
-app.use("/course", courseRouter);
-app.listen(3000);
+app.use("/api/v1/user", userRouter);
+app.use("/api/v1/course", CourseRouter);
+
+app.listen(30000, () => {
+  console.log("Server running on port 30000");
+});

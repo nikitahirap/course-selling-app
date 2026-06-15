@@ -1,17 +1,18 @@
-function createUserRoutes(app) {
-  app.get("/user/purchase", function (req, res) {
-    //you would expect the user to you the moneyg
-    res.json({
-      message: "",
-    });
+const { Router } = require("express");
+const CourseRouter = Router();
+
+CourseRouter.get("/preview", function (req, res) {
+  //you would expect the user to you the moneyg
+  res.json({
+    message: "signup endpoint",
   });
-  app.get("/user/purchases", function (req, res) {
-    res.json({
-      message: "",
-    });
+});
+CourseRouter.get("/purchase", function (req, res) {
+  res.json({
+    message: "signup endpoint",
   });
-}
+});
 
 module.exports = {
-  createUserRoutes: createUserRoutes,
+  CourseRouter: CourseRouter,
 };
